@@ -8,14 +8,22 @@ Se empleó la técnica de SLAM (Simultaneous Localization and Mapping). La local
 
 Para poder crear un robot que sea capaz de mapear el entorno, se utilizó un Kinect a bordo del carro diferencial y el paquete rtabmap_ros. Este es una envoltura ROS de RTAB-Map (mapeo basado en apariencia en tiempo real), el cual emplea la técnica de RGB-D SLAM basado en un detector de cierre de bucle global con restricciones en tiempo real. Este paquete se utilizó para generar nubes de puntos en 3D del entorno y para crear un mapa de cuadrícula de ocupación en 2D para la navegación. 
 
-<!-- ![Alt Text](https://drive.google.com/uc?export=view&id=1hXCs5A3Ocyo7oBKXdv7mKZAAoW1rCDAl) -->
+## Diseño
+
+<img src="https://drive.google.com/uc?export=view&id=1_KlhjTA4BUrHfFv1fwdgCd_1iYuJbekb" width="640" height="360" />
+
+El robot cuenta en un robot móvil diferencial que tiene dos modos, el modo mapeo donde se crea un mapa mediante la técnica SLAM y el modo navegación donde se ubica dentro del mapa creado y busca llegar a la posición seleccionada por el usuario.
+
+### Simulación en Gazebo (modo mapeo)
+
 <img src="https://drive.google.com/uc?export=view&id=1hXCs5A3Ocyo7oBKXdv7mKZAAoW1rCDAl" width="640" height="360" />
 
-<!-- ![Alt Text](https://drive.google.com/uc?export=view&id=1PKjJjcd0-zNBVVt_AQ0egya5sH--7h6J) -->
+### Cuadrícula de ocupación (modo mapeo)
+
 <img src="https://drive.google.com/uc?export=view&id=1PKjJjcd0-zNBVVt_AQ0egya5sH--7h6J" width="640" height="360" />
 
-<!-- ![Alt Text](https://drive.google.com/uc?export=view&id=1n0FqWCFH9X6FIUdiu72r_nKMq-_VlNPu) -->
+### Mapa 3D generado
 <img src="https://drive.google.com/uc?export=view&id=1n0FqWCFH9X6FIUdiu72r_nKMq-_VlNPu" width="640" height="360" />
 
-<!-- ![Alt Text](https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH) -->
+### Bbtención de la trayectoria optima entre dos puntos utilizando A*
 <img src="https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH" width="360" height="360" />
