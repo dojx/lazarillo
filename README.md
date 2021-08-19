@@ -18,4 +18,4 @@ Para poder crear un robot que sea capaz de mapear el entorno, se utilizó un Kin
 <img src="https://drive.google.com/uc?export=view&id=1n0FqWCFH9X6FIUdiu72r_nKMq-_VlNPu" width="640" height="360" />
 
 <!-- ![Alt Text](https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH) -->
-<img src="https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH" width="640" height="360" />
+<img src="https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH" width="360" height="360" />
