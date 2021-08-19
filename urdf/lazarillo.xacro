@@ -1,0 +1,148 @@
+<?xml version="1.0" ?>
+
+<robot name="lazarillo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- External Files -->
+  <xacro:include filename="$(find lazarillo)/urdf/macros.xacro"/>
+
+  <!-- Base Link -->
+  <link name="base_link"/>
+
+  <!-- Floor 1 -->
+  <xacro:floor_link name="floor_1_link"/>
+  <xacro:fixed_joint name="floor_1_joint" parent="base_link" child="floor_1_link" origin_xyz="0 0 0.02205"/>
+
+  <!-- Floor 2 -->
+  <xacro:floor_link name="floor_2_link"/>
+  <xacro:fixed_joint name="floor_2_joint" parent="floor_1_link" child="floor_2_link" origin_xyz="0 0 0.0515"/>
+
+  <!-- Floor 3 -->
+  <xacro:floor_link name="floor_3_link"/>
+  <xacro:fixed_joint name="floor_3_joint" parent="floor_2_link" child="floor_3_link" origin_xyz="0 0 0.0615"/>
+
+  <!-- Floor 1 Column 1 -->
+  <xacro:column_link name="column_1_1_link" height="0.05" color="white"/>
+  <xacro:fixed_joint name="column_1_1_joint" parent="floor_1_link" child="column_1_1_link" origin_xyz="-0.058 -0.058 0.0265"/>
+
+  <!-- Floor 1 Column 2 -->
+  <xacro:column_link name="column_1_2_link" height="0.05" color="white"/>
+  <xacro:fixed_joint name="column_1_2_joint" parent="floor_1_link" child="column_1_2_link" origin_xyz="-0.058 0.058 0.0265"/>
+
+  <!-- Floor 1 Column 3 -->
+  <xacro:column_link name="column_1_3_link" height="0.05" color="white"/>
+  <xacro:fixed_joint name="column_1_3_joint" parent="floor_1_link" child="column_1_3_link" origin_xyz="0.05795 0.0359 0.0265"/>
+
+  <!-- Floor 1 Column 4 -->
+  <xacro:column_link name="column_1_4_link" height="0.05" color="white"/>
+  <xacro:fixed_joint name="column_1_4_joint" parent="floor_1_link" child="column_1_4_link" origin_xyz="0.05795 -0.0359 0.0265"/>
+
+  <!-- Floor 2 Column 1 -->
+  <xacro:column_link name="column_2_1_link" height="0.06" color="white"/>
+  <xacro:fixed_joint name="column_2_1_joint" parent="floor_2_link" child="column_2_1_link" origin_xyz="-0.058 -0.058 0.0265"/>
+
+  <!-- Floor 2 Column 2 -->
+  <xacro:column_link name="column_2_2_link" height="0.06" color="white"/>
+  <xacro:fixed_joint name="column_2_2_joint" parent="floor_2_link" child="column_2_2_link" origin_xyz="-0.058 0.058 0.0265"/>
+
+  <!-- Floor 2 Column 3 -->
+  <xacro:column_link name="column_2_3_link" height="0.06" color="white"/>
+  <xacro:fixed_joint name="column_2_3_joint" parent="floor_2_link" child="column_2_3_link" origin_xyz="0.05795 0.0359 0.0265"/>
+
+  <!-- Floor 2 Column 4 -->
+  <xacro:column_link name="column_2_4_link" height="0.06" color="white"/>
+  <xacro:fixed_joint name="column_2_4_joint" parent="floor_2_link" child="column_2_4_link" origin_xyz="0.05795 -0.0359 0.0265"/>
+
+  <!-- Block 1 -->
+  <xacro:block_link name="block_lower_link"/>
+  <xacro:fixed_joint name="block_lower_joint" parent="floor_3_link" child="block_lower_link" origin_xyz="-0.0285 0 0.014"/>
+
+  <!-- Cane -->
+  <xacro:cane_link name="cane_link"/>
+  <xacro:fixed_joint name="cane_joint" parent="block_lower_link" child="cane_link" origin_xyz="0 0 0.379"/>
+
+  <!-- Block 2 -->
+  <xacro:block_link name="block_upper_link"/>
+  <xacro:fixed_joint name="block_upper_joint" parent="cane_link" child="block_upper_link" origin_xyz="0 0 0.379"/>
+
+  <!-- Board -->
+  <xacro:board_link name="board_link"/>
+  <xacro:fixed_joint name="board_joint" parent="block_upper_link" child="board_link" origin_xyz="0.025 0 0.014"/>
+
+  <!-- Button 1 -->
+  <xacro:button_link name="button_1_link" color="pink"/>
+  <xacro:fixed_joint name="button_1_joint" parent="board_link" child="button_1_link" origin_xyz="0.06 0.07 0.003"/>
+
+  <!-- Button 2 -->
+  <xacro:button_link name="button_2_link" color="blue"/>
+  <xacro:fixed_joint name="button_2_joint" parent="board_link" child="button_2_link" origin_xyz="0.08 0.025 0.003"/>
+
+  <!-- Button 3 -->
+  <xacro:button_link name="button_3_link" color="orange"/>
+  <xacro:fixed_joint name="button_3_joint" parent="board_link" child="button_3_link" origin_xyz="0.08 -0.025 0.003"/>
+
+  <!-- Button 4 -->
+  <xacro:button_link name="button_4_link" color="purple"/>
+  <xacro:fixed_joint name="button_4_joint" parent="board_link" child="button_4_link" origin_xyz="0.06 -0.07 0.003"/>
+
+  <!-- Caster Link -->
+  <link name="caster_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.011025"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.011025"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.75"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  
+  <!-- Caster Joint -->
+  <joint name="caster_joint" type="fixed">
+    <parent link="floor_1_link"/>
+    <child link="caster_link"/>
+    <origin rpy="0 0 0" xyz="-0.05795 0 -0.011025"/>
+  </joint>
+
+  <!-- Left wheel -->
+  <xacro:wheel_link name="left_wheel_link"/>
+  <xacro:wheel_joint name="left_wheel_joint" child="left_wheel_link" origin_xyz="0.05795 0.090002 0.0"/>
+  
+  <!-- Right wheel -->
+  <xacro:wheel_link name="right_wheel_link"/>
+  <xacro:wheel_joint name="right_wheel_joint" child="right_wheel_link" origin_xyz="0.05795 -0.090002 0.0"/>
+
+  <!-- Kinect -->
+  <!-- Kinect Link -->
+  <link name="camera_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://lazarillo/meshes/kinect.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.073 0.276 0.072"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <!-- Kinect Joint -->
+  <xacro:fixed_joint name="camera_joint" parent="floor_3_link" child="camera_link" origin_xyz="0.07 0.0 0.051"/>
+
+</robot>

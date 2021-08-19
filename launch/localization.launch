@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- Send urdf to param server -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find lazarillo)/urdf/lazarillo.xacro'" />
+
+  <!-- Send fake joint values-->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/>
+    <param name="rate" value="30"/>
+  </node>
+
+  <!-- Send robot states to tf -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <param name="use_tf_static" value="false"/>
+  </node>
+
+  <!-- Launch rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find lazarillo)/rviz/lazarillo.rviz" respawn="false"/>  
+
+  <!-- Rosserial (arduino communication) -->
+  <node name="arduino" pkg="rosserial_python" type="serial_node.py" args="/dev/ttyACM0"/>  
+
+  <!-- Converts arduino odom to nav_msgs/Odometry -->
+  <node name="odom_publisher" pkg="lazarillo" type="odom_pub.py"/>
+
+  <!-- Freenect -->
+  <include file="$(find freenect_launch)/launch/freenect.launch">
+    <arg name="depth_registration" value="True" />
+  </include>
+
+  <!-- Localization Mode -->     
+  <include file="$(find lazarillo)/launch/rtabmap.launch">
+      <arg name="localization" value="true"/>
+      <arg name="rtabmapviz" value="true"/>
+  </include>   
+
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+    <remap from="cloud_in" to="/camera/depth_registered/points"/>
+    <remap from="scan" to="/scan" />
+    <rosparam>
+      target_frame: camera_link
+      transform_tolerance: 0.01
+      min_height: -0.1
+      max_height: 1.9
+      
+      angle_min: -1.5708
+      angle_max: 1.5708
+      angle_increment: 0.0087
+      scan_time: 0.3333
+      range_min: 0.4
+      range_max: 4.0
+      use_inf: true
+      
+      #concurrency_level affects number of pc queued for processing and the number of threadsused
+      # 0: Detect number of cores
+      # 1: Single threaded
+      # 2: inf : Parallelism level
+      concurrency_level: 1
+    </rosparam>
+  </node>
+
+  <node name="map_2_base" pkg="lazarillo" type="map_to_base.py"/>
+
+  <node name="goal_selector" pkg="lazarillo" type="kinect_play.py"/>
+
+  <node name="a_star_server" pkg="lazarillo" type="a_star_server.py"/>
+
+  <node name="follow_path" pkg="lazarillo" type="follow_path.py"/>
+
+  <node name="init" pkg="lazarillo" type="initialize.py"/>
+</launch>
