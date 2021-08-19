@@ -12,13 +12,13 @@ Para la obtención de la trayectoria optima entre dos puntos del mapa se utiliz�
 
 ## Diseño
 
-<img src="https://drive.google.com/uc?export=view&id=1_KlhjTA4BUrHfFv1fwdgCd_1iYuJbekb" width="640" height="360" />
+<img src="https://drive.google.com/uc?export=view&id=1_KlhjTA4BUrHfFv1fwdgCd_1iYuJbekb" width="512" height="464" />
 
 El robot cuenta en un robot móvil diferencial que tiene dos modos, el modo mapeo donde se crea un mapa mediante la técnica SLAM y el modo navegación donde se ubica dentro del mapa creado y busca llegar a la posición seleccionada por el usuario.
 
 ### Simulación en Gazebo (modo mapeo)
 
-<img src="https://drive.google.com/uc?export=view&id=1hXCs5A3Ocyo7oBKXdv7mKZAAoW1rCDAl" width="512" height="464" />
+<img src="https://drive.google.com/uc?export=view&id=1hXCs5A3Ocyo7oBKXdv7mKZAAoW1rCDAl" width="640" height="360" />
 
 ### Cuadrícula de ocupación (modo mapeo)
 
