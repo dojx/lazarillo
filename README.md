@@ -11,9 +11,11 @@ Para poder crear un robot que sea capaz de mapear el entorno, se utilizó un Kin
 <!-- ![Alt Text](https://drive.google.com/uc?export=view&id=1hXCs5A3Ocyo7oBKXdv7mKZAAoW1rCDAl) -->
 <img src="https://drive.google.com/uc?export=view&id=1hXCs5A3Ocyo7oBKXdv7mKZAAoW1rCDAl" width="640" height="360" />
 
-![Alt Text](https://drive.google.com/uc?export=view&id=1PKjJjcd0-zNBVVt_AQ0egya5sH--7h6J)
+<!-- ![Alt Text](https://drive.google.com/uc?export=view&id=1PKjJjcd0-zNBVVt_AQ0egya5sH--7h6J) -->
+<img src="https://drive.google.com/uc?export=view&id=1PKjJjcd0-zNBVVt_AQ0egya5sH--7h6J" width="640" height="360" />
 
-![Alt Text](https://drive.google.com/uc?export=view&id=1n0FqWCFH9X6FIUdiu72r_nKMq-_VlNPu)
+<!-- ![Alt Text](https://drive.google.com/uc?export=view&id=1n0FqWCFH9X6FIUdiu72r_nKMq-_VlNPu) -->
+<img src="https://drive.google.com/uc?export=view&id=1n0FqWCFH9X6FIUdiu72r_nKMq-_VlNPu" width="640" height="360" />
 
-![Alt Text](https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH)
-
+<!-- ![Alt Text](https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH) -->
+<img src="https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH" width="640" height="360" />
