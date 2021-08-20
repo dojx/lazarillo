@@ -27,7 +27,7 @@ ROS nos proporciona una manera de conectar una red de procesos (o nodos), en don
 
 <img src="https://drive.google.com/uc?export=view&id=1hXCs5A3Ocyo7oBKXdv7mKZAAoW1rCDAl" width="640" height="360" />
 
-Se uso el simulador Gazebo para mapear un apartamento virtual con múltiples habitaciones y obstáculos. Para crear un modelo del robot con las dimensiones reales y poder utilizarlo dentro del simulador, se utilizó URDF (United Robotics Description Format), un formato de lenguaje utilizado para describir robots en el marco de gramática XML.
+Se utilizo Gazebo, un simulador de entornos 3D que posibilita evaluar el comportamiento de un robot en un mundo virtual. Además, es posible sincronizarlo con ROS de forma que los robots emulados publiquen la información de sus sensores en nodos, así como implementar una lógica y un control que dé ordenes al robot. Gracias a esta herramienta se pudieron probar los algoritmos de SLAM y el seguimiento de trayectoria sin tener que correr el riesgo de dañar el robot verdadero.
 
 #### Cuadrícula de ocupación 
 
