@@ -43,7 +43,7 @@ Al presionar uno de los botones en el bastón, el usuario puede guardar su posic
 
 ### Modo Localización
 
-Con un mapa establecido el robot se ubica dentro de este con ayuda del paquete rtabmap_ros, el usuario selecciona una de las posiciones que guardo en el modo mapeo y se calcula la trayectoria optima de la posición actual a la posición deseada, el robot sigue esta trayectoria con ayuda de un controlador PID hasta llegar a la posición guardada en el botón, guiando al usuario invidente con ayuda de una base con relieve.
+Con un mapa establecido el robot se ubica dentro de este con ayuda del paquete _rtabmap_ros_, el usuario selecciona una de las posiciones que guardo en el modo mapeo y se calcula la trayectoria optima de la posición actual a la posición deseada, el robot sigue esta trayectoria con ayuda de un controlador PID hasta llegar a la posición guardada en el botón, guiando al usuario invidente con ayuda de una base con relieve.
 
 #### Obtención de trayectoria optima entre dos puntos utilizando A*
 <img src="https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH" width="360" height="360" />
