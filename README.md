@@ -1,6 +1,8 @@
 # Robot Móvil Diferencial para Asistencia a Invidentes (Lazarillo)
 
-A continuación se demuestra el prototipo de un robot móvil con configuración diferencial con el propósito de ayudar a las personas que han adquirido recientemente alguna discapacidad visual. El robot tendrá abordó un Kinect que servirá para la localización, navegación y evasión de obstáculos dentro de un plano.
+A continuación se demuestra el prototipo de un robot móvil con configuración diferencial con el fin de ayudar a las personas que han adquirido recientemente alguna discapacidad visual. El robot tiene abordó un Kinect que sirve para la localización, navegación y evasión de obstáculos dentro de un plano.
+
+El proyecto fue creado utilizando Python y C++ en ROS.
 
 ## Metodología
 
