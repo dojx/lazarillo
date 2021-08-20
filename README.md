@@ -17,7 +17,7 @@ Para poder crear un robot que sea capaz de mapear el entorno, se utilizó un Kin
   <img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk" width="159" height="455"/>
 </p>
 
-El robot cuenta con dos modos: el modo mapeo donde se crea un mapa mediante la técnica SLAM y el modo navegación donde se ubica dentro del mapa creado y busca llegar a la posición seleccionada por el usuario.
+El robot cuenta con dos modos: el modo mapeo en donde se crea un mapa mediante la técnica SLAM y el modo navegación en donde se ubica dentro del mapa creado y busca llegar a la posición seleccionada por el usuario.
 
 ### Comunicacion con ROS
 
