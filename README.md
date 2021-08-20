@@ -10,7 +10,7 @@ Para poder crear un robot que sea capaz de mapear el entorno, se utilizó un Kin
 
 ## Diseño
 
-<img src="https://drive.google.com/uc?export=view&id=1_KlhjTA4BUrHfFv1fwdgCd_1iYuJbekb" width="512" height="464" />
+<img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk" />
 
 El robot cuenta en un robot móvil diferencial que tiene dos modos, el modo mapeo donde se crea un mapa mediante la técnica SLAM y el modo navegación donde se ubica dentro del mapa creado y busca llegar a la posición seleccionada por el usuario.
 
@@ -27,6 +27,10 @@ Se uso el simulador Gazebo para mapear un apartamento virtual con múltiples hab
 <img src="https://drive.google.com/uc?export=view&id=1PKjJjcd0-zNBVVt_AQ0egya5sH--7h6J" width="640" height="360" />
 
 El mapa 2D está representado por una imagen, en donde cada pixel representa 5cm^2. Los píxeles blancos representan lugares en donde hay espacio libre, los negros lugares en donde sí se encuentran obstáculos y los píxeles grises lugares desconocidos o con incertidumbre.
+
+
+#### Guardar puntos en el mapa
+Para que el usuario pueda guardar una ubicación dentro del mapa o seleccionar una a la cual dirigirse (previamente guardada) se utilizan botones de tipo arcade, los cuales por su tamaño son fáciles de ubicar y no requieren de mucha fuerza para ser presionados. La conexión de los botones para poder ser leídos fue mediante las resistencias pull-up internas que tiene Arduino.
 
 ### Modo Localizacion
 
