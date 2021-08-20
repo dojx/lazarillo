@@ -12,7 +12,7 @@ Para poder crear un robot que sea capaz de mapear el entorno, se utilizó un Kin
 
 <!-- <img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk" /> -->
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk"  />
+  <img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk" width="159" height="455"/>
 </p>
 
 El robot cuenta en un robot móvil diferencial que tiene dos modos, el modo mapeo donde se crea un mapa mediante la técnica SLAM y el modo navegación donde se ubica dentro del mapa creado y busca llegar a la posición seleccionada por el usuario.
@@ -31,11 +31,10 @@ Se uso el simulador Gazebo para mapear un apartamento virtual con múltiples hab
 
 El mapa 2D está representado por una imagen, en donde cada pixel representa 5cm^2. Los píxeles blancos representan lugares en donde hay espacio libre, los negros lugares en donde sí se encuentran obstáculos y los píxeles grises lugares desconocidos o con incertidumbre.
 
-
-#### Guardar puntos en el mapa
+#### Guardar puntos deseados
 Para que el usuario pueda guardar una ubicación dentro del mapa o seleccionar una a la cual dirigirse (previamente guardada) se utilizan botones de tipo arcade, los cuales por su tamaño son fáciles de ubicar y no requieren de mucha fuerza para ser presionados. La conexión de los botones para poder ser leídos fue mediante las resistencias pull-up internas que tiene Arduino.
 
-### Modo Localizacion
+### Modo Localización
 
 Con un mapa establecido el robot se ubica dentro de este con ayuda del paquete rtabmap_ros, el usuario selecciona una de las posiciones que guardo en el modo mapeo y se calcula la trayectoria optima de la posición actual a la posición deseada, el robot sigue esta trayectoria con ayuda de un controlador PID hasta llegar a la posición guardada en el botón, guiando al usuario invidente con ayuda de una base con relieve.
 
