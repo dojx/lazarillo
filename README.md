@@ -17,6 +17,10 @@ Para poder crear un robot que sea capaz de mapear el entorno, se utilizó un Kin
 
 El robot cuenta en un robot móvil diferencial que tiene dos modos, el modo mapeo donde se crea un mapa mediante la técnica SLAM y el modo navegación donde se ubica dentro del mapa creado y busca llegar a la posición seleccionada por el usuario.
 
+### Comunicacion con ROS
+
+ROS nos proporciona una manera de conectar una red de procesos (o nodos), en donde estos se comunican entre sí mandando mensajes a través de topics. La mayoría de estos programas fueron escritos en Python, la única excepción siendo el código de Arduino. Se usó el paquete _rosserial_arduino_ para controlar el Arduino Mega con ROS por medio de comunicación serial.
+
 ### Modo mapeo
 
 #### Simulación en Gazebo 
@@ -32,7 +36,8 @@ Se uso el simulador Gazebo para mapear un apartamento virtual con múltiples hab
 El mapa 2D está representado por una imagen, en donde cada pixel representa 5cm^2. Los píxeles blancos representan lugares en donde hay espacio libre, los negros lugares en donde sí se encuentran obstáculos y los píxeles grises lugares desconocidos o con incertidumbre.
 
 #### Guardar puntos deseados
-Para que el usuario pueda guardar una ubicación dentro del mapa o seleccionar una a la cual dirigirse (previamente guardada) se utilizan botones de tipo arcade, los cuales por su tamaño son fáciles de ubicar y no requieren de mucha fuerza para ser presionados. La conexión de los botones para poder ser leídos fue mediante las resistencias pull-up internas que tiene Arduino.
+
+Al presionar uno de los botones en el bastón, el usuario puede guardar su posición actual para que después, en el modo localización, pueda regresar a este punto. También tiene la opción de guardar un mensaje de audio para nombrar el punto.
 
 ### Modo Localización
 
@@ -42,6 +47,8 @@ Con un mapa establecido el robot se ubica dentro de este con ayuda del paquete r
 <img src="https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH" width="360" height="360" />
 
 Para la obtención de la trayectoria optima entre dos puntos del mapa se utilizó el algoritmo de búsqueda A*, un algoritmo de búsqueda inteligente e informada que busca el camino más corto desde un estado inicial al estado meta a través de un espacio de problema, usando una heurística óptima. 
+
+Esta trayectoria, que se publica como una lista de puntos deseados en ROS, lo recibe el nodo de control. Este se encarga de aplicar el controlador PID para llevar el robot a cada uno de estos puntos deseados, hasta llegar al punto final seleccionado.
 
 ## Informe Completo
 
