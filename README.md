@@ -10,7 +10,8 @@ Para poder crear un robot que sea capaz de mapear el entorno, se utilizó un Kin
 
 ## Diseño
 
-<img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk" />
+<!-- <img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk" /> -->
+<div style="text-align:center"><img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk" /></div>
 
 El robot cuenta en un robot móvil diferencial que tiene dos modos, el modo mapeo donde se crea un mapa mediante la técnica SLAM y el modo navegación donde se ubica dentro del mapa creado y busca llegar a la posición seleccionada por el usuario.
 
