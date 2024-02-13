@@ -14,7 +14,7 @@ Para poder crear un robot que sea capaz de mapear el entorno, se utilizó un Kin
 
 <!-- <img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk" /> -->
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1yAcRZdWAT-r6jjumIKJg-wjArtCrONZk" width="159" height="455"/>
+  <img src="https://github.com/dojx/lazarillo/blob/main/lazarillo_baston.png" width="159" height="455"/>
 </p>
 
 El robot cuenta con dos modos: el modo mapeo en donde se crea un mapa mediante la técnica SLAM y el modo navegación en donde se ubica dentro del mapa creado y busca llegar a la posición seleccionada por el usuario.
@@ -27,13 +27,13 @@ ROS nos proporciona una manera de conectar una red de procesos (o nodos), en don
 
 #### Simulación en Gazebo 
 
-<img src="https://drive.google.com/uc?export=view&id=1hXCs5A3Ocyo7oBKXdv7mKZAAoW1rCDAl" width="640" height="360" />
+<img src="https://github.com/dojx/lazarillo/blob/main/gazebo.gif" width="640" height="360" />
 
 Se utilizo Gazebo, un simulador de entornos 3D que posibilita evaluar el comportamiento de un robot en un mundo virtual. Además, es posible sincronizarlo con ROS de forma que los robots emulados publiquen la información de sus sensores en nodos, así como implementar una lógica y un control que dé ordenes al robot. Gracias a esta herramienta se pudieron probar los algoritmos de SLAM y el seguimiento de trayectoria sin tener que correr el riesgo de dañar el robot verdadero.
 
 #### Cuadrícula de ocupación 
 
-<img src="https://drive.google.com/uc?export=view&id=1PKjJjcd0-zNBVVt_AQ0egya5sH--7h6J" width="640" height="360" />
+<img src="https://github.com/dojx/lazarillo/blob/main/map_2d.gif" width="640" height="360" />
 
 El mapa 2D está representado por una imagen, en donde cada pixel representa 5cm^2. Los píxeles blancos representan lugares en donde hay espacio libre, los negros lugares en donde sí se encuentran obstáculos y los píxeles grises lugares desconocidos o con incertidumbre.
 
@@ -46,7 +46,7 @@ Al presionar uno de los botones en el bastón, el usuario puede guardar su posic
 Con un mapa establecido el robot se ubica dentro de este con ayuda del paquete _rtabmap_ros_, el usuario selecciona una de las posiciones que guardo en el modo mapeo y se calcula la trayectoria optima de la posición actual a la posición deseada, el robot sigue esta trayectoria con ayuda de un controlador PID hasta llegar a la posición guardada en el botón, guiando al usuario invidente con ayuda de una base con relieve.
 
 #### Obtención de trayectoria optima entre dos puntos utilizando A*
-<img src="https://drive.google.com/uc?export=view&id=1rohEKkrAbZTBcTZgwCTLnDiQBos_DEYH" width="360" height="360" />
+<img src="https://github.com/dojx/lazarillo/blob/main/astar.gif" width="360" height="360" />
 
 Para la obtención de la trayectoria optima entre dos puntos del mapa se utilizó el algoritmo de búsqueda A*, un algoritmo de búsqueda inteligente e informada que busca el camino más corto desde un estado inicial al estado meta a través de un espacio de problema, usando una heurística óptima. 
 
